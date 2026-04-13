@@ -11,16 +11,19 @@
 
 <br>
 
-You are facing layoff and don't know how to assert your rights?<br>
-You worry about being exploited by the company and don't know how to negotiate?<br>
-You need psychological support and don't know how to get through this difficult period?<br>
-You need legal knowledge and don't know how to protect your legitimate rights and interests?<br>
+Are you facing layoff and don't know how to assert your rights?<br>
+Are you worried about being exploited by the company and don't know how to negotiate?<br>
+Do you need psychological support to get through this difficult period?<br>
+Do you need legal knowledge to protect your legitimate rights and interests?<br>
+Do you need to reduce information asymmetry to communicate with the company?<br>
 
-**Let belaidoff.skill be your rights protection assistant, providing you with professional legal advice and negotiation strategies!**
+**Let belaidoff.skill be your rights protection assistant, providing professional legal advice and negotiation strategies!**
+
+**May every laid-off worker be treated with kindness. Layoff is not terrible, it's just the beginning of the next chapter of life.**
+
+It is a mirror of **[layoff.skill](https://github.com/hudoudou-dev/layoff-skill)** (by hudoudou-dev).
 
 <br>
-
-Upload your personal information (or your friend's information) and relevant evidence (work emails, Feishu/DingTalk chat records, contracts, etc.) to generate a **personalized layoff response AI Skill** that helps you calculate compensation, develop negotiation strategies, provide psychological support, and prepare legal documents.
 
 [Supported Sources](#supported-data-sources) · [Install](#install) · [Usage](#usage) · [Demo](#demo) · [Detailed Install](INSTALL.md)
 
@@ -30,13 +33,15 @@ Upload your personal information (or your friend's information) and relevant evi
 
 ---
 
-Created by [@hudoudou-dev](https://github.com/hudoudou-dev) | Powered by hudoudou-personal
+Upload your personal information and relevant layoff materials (work emails, Feishu/DingTalk chat records, contracts, etc.) to generate a **personalized layoff response AI Skill** that helps you calculate compensation, develop negotiation strategies, provide psychological support, and prepare legal documents.
 
-> **Note**: This project is modified based on colleague.skill, specifically designed to provide rights protection and psychological support for employees facing layoff.
+Created by [@hudoudou-dev](https://github.com/hudoudou-dev) | Powered by hudoudou-personal
 
 ## Supported Data Sources
 
-> This is still an alpha version of belaidoff.skill — more sources coming soon, stay tuned!
+> **Note**: This project is modified based on colleague.skill, specifically designed to provide rights protection and psychological support for employees facing layoff.
+
+> This is currently an alpha version of belaidoff.skill — more sources will be supported in the future, stay tuned!
 
 | Source | Messages | Docs / Wiki | Spreadsheets | Notes |
 |--------|:--------:|:-----------:|:------------:|-------|
@@ -90,7 +95,7 @@ In Claude Code, type:
 /create-belaidoff
 ```
 
-Follow the prompts: enter name, basic work information (company, hire date, level, annual salary, performance), personal status (age, education, marital status, children, parents, mortgage), layoff situation (current stage and demands), personal status tags, then choose a data source. All fields can be skipped — even a description alone can generate a Skill.
+Follow the prompts: enter personal information (name, basic work information, personal status, layoff situation, personal status tags), then choose a data source. All fields can be skipped — even a description alone can generate a Skill.
 
 Once created, invoke the layoff response Skill with `/{slug}`.
 
@@ -115,7 +120,6 @@ Once created, invoke the layoff response Skill with `/{slug}`.
 
 ```
 User            ❯ How much compensation can I get?
-
 belaidoff.skill ❯ Based on your situation, the calculation is as follows:
                   - Working years: 4 years
                   - Average monthly salary: 50,000 yuan
@@ -129,7 +133,6 @@ belaidoff.skill ❯ Based on your situation, the calculation is as follows:
 
 ```
 User            ❯ HR said they can only give N+1, how should I negotiate?
-
 belaidoff.skill ❯ I suggest you:
                   1. Collect evidence: labor contract, salary slips, social security records, chat records, etc.
                   2. Emphasize your contributions: list the achievements and results you made for the company
@@ -142,7 +145,6 @@ belaidoff.skill ❯ I suggest you:
 
 ```
 User            ❯ I'm very anxious, I don't know what to do
-
 belaidoff.skill ❯ I understand your feelings, I suggest you:
                   1. Practice deep breathing to relieve anxiety
                   2. Communicate with family and friends to seek emotional support
@@ -164,23 +166,20 @@ Each layoff response Skill has two parts that work together:
 | **Part A — Rights Protection Capabilities** | Compensation calculation, negotiation strategies, legal knowledge base, document templates, psychological support |
 | **Part B — Personal Profile** | 5-layer structure: Core demands → Mental state → Family burden → Communication style → Risk tolerance |
 
-Execution: `Receive task → Personal Profile judges needs and mental state → Rights Protection Capabilities provide specific solutions → Output considering user's communication style and risk tolerance`
+Execution: `Receive task → Personal Profile judges needs and mental state → Rights Protection Capabilities provide specific solutions → Output combining user's communication style and risk tolerance`
 
 ### Supported Tags
 
-**Family burden**: Has children · Has mortgage · Financial pressure · Family breadwinner · No burden
-
-**Mental state**: Anxious · Angry · Depressed · Fearful · Calm and rational · Optimistic and positive
-
-**Communication style**: Assertive · Gentle negotiation · Reserved · Aggressive · Evidence-based
-
-**Risk tolerance**: High risk · Medium risk · Low risk · Conservative · Aggressive
+- **Family burden**: Has children · Has mortgage · Financial pressure · Family breadwinner · No burden
+- **Mental state**: Anxious · Angry · Depressed · Fearful · Calm and rational · Optimistic and positive
+- **Communication style**: Assertive · Gentle negotiation · Reserved · Aggressive · Evidence-based
+- **Risk tolerance**: High risk · Medium risk · Low risk · Conservative · Aggressive
 
 ### Evolution
 
-- **Append files** → auto-analyze delta → merge into relevant sections, never overwrite existing conclusions
-- **Conversation correction** → say "it should be xxx" → writes to Correction layer, takes effect immediately
-- **Version control** → auto-archive on every update, rollback to any previous version
+- **Append files**: Auto-analyze delta, merge into relevant sections, never overwrite existing conclusions
+- **Conversation correction**: Say "it should be xxx", write to Correction layer, take effect immediately
+- **Version control**: Auto-archive on every update, support rollback to any previous version
 
 ---
 
@@ -218,9 +217,9 @@ create-belaidoff/
 ## Notes
 
 - **Source material quality = Skill quality**: chat logs + contract documents > manual description only
-- Prioritize collecting: chat records with HR/management, labor contracts, salary slips, social security records, etc.
+- Prioritize collecting: chat records with HR/management, labor contracts, salary slips, social security records, text versions of verbal compensation communications, etc.
 - Feishu auto-collection requires adding the App bot to relevant group chats
-- This is still a demo version — please file issues if you find bugs!
+- This is currently a demo version — please file issues if you find bugs!
 - The information provided by this project is for reference only, please consult a professional lawyer for specific legal issues
 
 ---
@@ -230,6 +229,12 @@ create-belaidoff/
 This project aims to provide information and suggestions, not legal advice. All content is for reference only, please consult a professional lawyer for specific legal issues. The project does not assume responsibility for any consequences arising from the use of this project.
 
 ---
+
+## Acknowledgements
+
+This project's architecture was inspired by:
+
+- **[colleague.skill](https://github.com/titanwings/colleague-skill)** (by titanwings) — Pioneered the dual-layer architecture of "distilling a person into an AI Skill"
 
 ---
 
